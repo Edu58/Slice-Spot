@@ -24,10 +24,15 @@
     width: auto;
 }
 
-.hero nav span {
+.hero nav span,
+.hero .contents .pizza span {
     color: var(--red);
 }
 
-.hero nav button {
+.hero nav button, .hero .contents button {
     background-color: var(--red);
+}
+
+.hero .contents .pizza {
+    min-height: 80vh;
 }
