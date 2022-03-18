@@ -4,4 +4,30 @@
 *{
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    --yellow: #faa616;
+    --red: #cf1926;
+    --green: #09b55d;
+    --dark-gray:#464351;
+    --pink: #ed594e;
+}
+
+.hero {
+    background: linear-gradient(to right bottom, var(--yellow) 55%, #ffffff 45%);
+    transform: scaleY(1);
+    /* backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px); */
+    transition: 0.2 all;
+}
+
+.hero nav img {
+    height: 4rem;
+    width: auto;
+}
+
+.hero nav span {
+    color: var(--red);
+}
+
+.hero nav button {
+    background-color: var(--red);
 }
