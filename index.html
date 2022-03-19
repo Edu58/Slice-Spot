@@ -74,20 +74,21 @@
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content bg-success">
-                            <div class="modal-header bg-success">
-                                <h5 class="modal-title bg-success" id="staticBackdropLabel">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">
                                     Order Placed successfully
                                 </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <div class="modal-body bg-success" id="success-modal">
-                                
+                            <div class="modal-body" id="success-modal">
+
                             </div>
+                            <p class="fs-5 lead text-center my-2" id="modal-price"></p>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Understood</button>
+                                <button type="button" class="btn btn-secondary text-light fw-bold"
+                                    data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -129,7 +130,8 @@
 
                         <div class="mb-3">
                             <label for="quantity" class="form-label fs-4">Quantity</label>
-                            <input type="number" name="quantity" id="quantity" class="form-control" min="1" max="100" required placeholder="100 max">
+                            <input type="number" name="quantity" id="quantity" class="form-control" min="1" max="100"
+                                required placeholder="100 max">
                         </div>
 
                         <div class="mb-3 d-flex align-items-center">
@@ -139,10 +141,15 @@
 
                         <div class="mb-3" id="div-location">
                             <label for="location" class="form-label fs-4">Location</label>
-                            <input type="text" maxlength="100" class="form-control" id="location" placeholder="e.g. juja equity bank">
+                            <input type="text" maxlength="100" class="form-control" id="location"
+                                placeholder="e.g. juja equity bank">
                         </div>
-                        
-                        <button type="submit" class="btn mt-lg-4 mt-md-3 w-100 text-light fw-bold">Get Price</button>
+
+                        <a href="#order-card" class="text-decoration-none">
+                            <button type="submit" class="btn mt-lg-4 mt-md-3 w-100 text-light fw-bold">
+                                Get Price
+                            </button>
+                        </a>
                     </form>
                 </div>
 
@@ -152,11 +159,11 @@
 
                         <div class="price my-5">
                             <p class="fs-5 fw-bold" id="deliveredAt"></p>
-                             <p class="fs-3 fw-bold card-title text-center" id="showPrice"></p>
+                            <p class="fs-3 fw-bold card-title text-center" id="showPrice"></p>
                         </div>
 
-                        <button type="submit" class="btn fw-bold fs-5 text-light"
-                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">checkout</button>
+                        <button type="submit" class="btn fw-bold fs-5 text-light" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop" id="checkout">checkout</button>
                     </div>
                 </div>
             </div>

@@ -64,21 +64,35 @@ $(function () {
         const Order = new order(size, crust, topping, quantity, location)
 
         // Call calculate price method
-        const orderPrice = Order.calculatePrice()
+        const orderPrice = Order.calculatePrice().toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'KSH'
+        })
         
         // Insert price into price card element
-        $('#showPrice').text('Total: ' + orderPrice.toLocaleString('en-US', { style: 'currency', currency: 'KSH' }))
+        $('#showPrice').text('Total: ' + orderPrice)
         
         $('#deliveredAt').text(deliveredAt)
 
         // Reveal card to user with price inserted
         $('#order-card').fadeIn()
 
+        $('#success-modal').text(
+            quantity + ' ' + size +' ' + ' pizza(s) ' + ' with a ' + crust + ' crust and ' + topping + ' topping coming your way. Welcome Again'
+        )
+
+        $('#modal-price').text('Total Charged: ' + orderPrice)
+
+        // remove checkout card
+        $('#checkout').on('click', () => {
+            $('#order-card').fadeOut()
+        })
+
         // hide location div again
-        $('#div-location').toggle()
+        $('#div-location').hide()
 
         // reset delivery location and price 
-        deliveredAt = 0;
+        deliveredAt = '';
         totalPrice = 0;
 
         // reset form
