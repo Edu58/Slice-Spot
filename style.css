@@ -125,4 +125,12 @@
     .hero nav img {
         display: none;
     }
+
+    .order .container .form {
+        min-width: 98%;
+    }
+
+    .order .container .card {
+        min-width: 98%;
+    }
 }
