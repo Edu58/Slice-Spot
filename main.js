@@ -54,11 +54,10 @@ $(function () {
         
 
         const Order = new order(size, crust, topping, quantity, location)
-        console.log(Order)
 
         const orderPrice = Order.calculatePrice()
         
-        console.log(orderPrice)
+        $('#showPrice').text('Total: Ksh ' + orderPrice)
 
         $('#order-card').fadeIn()
 
