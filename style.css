@@ -55,7 +55,8 @@
 }
 
 .order .container .form form label,
-.order .container .form form p {
+.order .container .form form p,
+.order .container .card .yourOrder p {
     color: #34495e;
 }
 
@@ -72,6 +73,10 @@
     background-color: var(--green);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+}
+
+.order .container .card .yourOrder button {
+    background-color: var(--red);
 }
 
 @media screen and (max-width: 1024px) {
