@@ -36,3 +36,37 @@
 .hero .contents .pizza {
     min-height: 80vh;
 }
+
+@media screen and (max-width: 1024px) {
+    .hero .contents .pizza .slogan button {
+        min-width: 40%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .hero .contents .pizza {
+        flex-direction: column-reverse;
+    }
+
+    .hero .contents .pizza .slogan {
+        text-align: center;
+        min-width: 98%;
+    }
+
+    .hero .contents .pizza .slogan button {
+        margin: 0 auto;
+        min-width: 80%;
+    }
+
+    .hero .contents .pizza img {
+        margin-top: 2rem;
+        max-height: 20rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .hero nav img {
+        display: none;
+    }
+}
