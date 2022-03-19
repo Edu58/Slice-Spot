@@ -18,6 +18,22 @@ $(function () {
         this.location = location
     }
 
+    const basePrice = 500;
+    let totalPrice;
+
+    order.prototype.calculatePrice = function () {
+
+        if (this.size === 'small') {
+            totalPrice = basePrice
+        } else if (this.size === 'medium') {
+            totalPrice = basePrice + 200
+        } else if (this.size === 'large') {
+            totalPrice = basePrice + 400
+        } else {
+            return null
+        }
+    }
+
     // Get form details
     $('#form').on('submit', (e) => {
         e.preventDefault()
@@ -28,7 +44,13 @@ $(function () {
         const quantity = $('#quantity').val()
         const location = $('#location').val()
 
+        
+
         const Order = new order(size, crust, topping, quantity, location)
         console.log(Order)
+
+        $('#order-card').fadeIn()
+
+        $(this).trigger('reset')
     })
 });
