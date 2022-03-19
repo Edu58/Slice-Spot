@@ -69,6 +69,31 @@
         </section>
 
         <section class="order" id="order">
+
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-success">
+                            <div class="modal-header bg-success">
+                                <h5 class="modal-title bg-success" id="staticBackdropLabel">
+                                    Order Placed successfully
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body bg-success" id="success-modal">
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="container d-flex justify-content-center align-items-center min-vh-100">
                 <div class="form w-50 me-5">
                     <form id="form">
@@ -126,10 +151,12 @@
                         <p class="fs-4 card-title text-center mb-4">Your Order</p>
 
                         <div class="price my-5">
+                            <p class="fs-5 fw-bold" id="deliveredAt"></p>
                              <p class="fs-3 fw-bold card-title text-center" id="showPrice"></p>
                         </div>
 
-                        <button type="submit" class="btn fw-bold fs-5 text-light">checkout</button>
+                        <button type="submit" class="btn fw-bold fs-5 text-light"
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">checkout</button>
                     </div>
                 </div>
             </div>

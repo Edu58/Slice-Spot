@@ -2,7 +2,7 @@ $(function () {
 
     // hide checkout card and location input
     $('#order-card').hide()
-     $('#div-location').hide()
+    $('#div-location').hide()
     
     // Toggle location input on clickiing delivered checkbox
     $('#delivered').on('click', () => {
@@ -22,6 +22,7 @@ $(function () {
     const basePrice = 500;
     let totalPrice;
     const deliveryFee = 200;
+    let deliveredAt;
 
     // Method used to calculate price based on user input
     order.prototype.calculatePrice = function () {
@@ -40,6 +41,7 @@ $(function () {
         // Add delivery fee if delivery is required
         if (this.location !== '') {
             totalPrice += deliveryFee
+            deliveredAt= 'Will be delivered at ' + this.location
         }
 
         return totalPrice;
@@ -65,10 +67,19 @@ $(function () {
         const orderPrice = Order.calculatePrice()
         
         // Insert price into price card element
-        $('#showPrice').text('Total: ' + orderPrice.toLocaleString('en-US', {style: 'currency', currency: 'KSH'}))
+        $('#showPrice').text('Total: ' + orderPrice.toLocaleString('en-US', { style: 'currency', currency: 'KSH' }))
+        
+        $('#deliveredAt').text(deliveredAt)
 
         // Reveal card to user with price inserted
         $('#order-card').fadeIn()
+
+        // hide location div again
+        $('#div-location').toggle()
+
+        // reset delivery location and price 
+        deliveredAt = 0;
+        totalPrice = 0;
 
         // reset form
         $('#form').trigger('reset')
