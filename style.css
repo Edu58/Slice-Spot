@@ -14,9 +14,6 @@
 .hero {
     background: linear-gradient(to right bottom, var(--yellow) 55%, #ffffff 45%);
     transform: scaleY(1);
-    /* backdrop-filter: blur(0.5px);
-    -webkit-backdrop-filter: blur(0.5px); */
-    transition: 0.2 all;
 }
 
 .hero nav img {
@@ -35,6 +32,46 @@
 
 .hero .contents .pizza {
     min-height: 80vh;
+}
+
+
+.order {
+     background: url('Images/wave.svg');
+     background-position: bottom;
+     background-repeat: no-repeat;
+}
+
+.order .container {
+    padding-top: 3%;
+}
+
+.order .container .form form {
+    padding: 2rem;
+    background: var(--yellow);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.order .container .form form label,
+.order .container .form form p {
+    color: #34495e;
+}
+
+.order .container .form form [type=checkbox] {
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+.order .container .form form button {
+    background-color: var(--red);
+}
+
+.order .container .card {
+    background-color: var(--green);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 @media screen and (max-width: 1024px) {

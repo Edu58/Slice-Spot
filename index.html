@@ -64,6 +64,71 @@
             </div>
         </section>
 
+        <section class="order min-vh-100">
+            <div class="container d-flex justify-content-between">
+                <div class="form w-50 me-5">
+                    <form id="form">
+
+                        <p class="fs-4 text-center mb-4">Customise Your Order</p>
+
+                        <div class="input-group mb-3">
+                            <label for="size" class="form-label fs-4">Size</label>
+                            <select class="form-select rounded px-3 py-1 w-100" id="size">
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label for="crust" class="form-label fs-4">crust</label>
+                            <select class="form-select rounded px-3 py-1 w-100" id="crust">
+                                <option value="crispy">Crispy</option>
+                                <option value="stuffed">Stuffed</option>
+                                <option value="glutten-free">Grutten-free</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label for="topping" class="form-label fs-4">Topping</label>
+                            <select class="form-select rounded px-3 py-1 w-100 border-none outline-none" id="topping">
+                                <option value="pepperoni">Pepperoni</option>
+                                <option value="ham">Spinach</option>
+                                <option value="sausage">Cooked Sausage</option>
+                                <option value="kale">Kale</option>
+                                <option value="bacon">Bacon</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="quantity" class="form-label fs-4">Quantity</label>
+                            <input type="number" name="quantity" id="quantity" class="form-control" min="1" max="100" required placeholder="100 max">
+                        </div>
+
+                        <div class="mb-3 d-flex align-items-center">
+                            <input type="checkbox" name="delivered" id="delivered" class="form-check-input me-4">
+                            <label for="delivered" class="form-check-label fs-4">Delivered</label>
+                        </div>
+                        
+                        <button type="submit" class="btn mt-lg-4 mt-md-3 w-100 text-light fw-bold">Order</button>
+                    </form>
+                </div>
+
+                <div class="card price w-25">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="footer">
+                <small>copyright &copy;2022 Edwin</small>
+            </div> -->
+        </section>
+
 
         <!-- jQuery CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
