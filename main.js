@@ -20,18 +20,25 @@ $(function () {
 
     const basePrice = 500;
     let totalPrice;
+    const deliveryFee = 200;
 
     order.prototype.calculatePrice = function () {
 
         if (this.size === 'small') {
-            totalPrice = basePrice
+            totalPrice = basePrice * this.quantity
         } else if (this.size === 'medium') {
-            totalPrice = basePrice + 200
+            totalPrice = (basePrice + 200) * this.quantity
         } else if (this.size === 'large') {
-            totalPrice = basePrice + 400
+            totalPrice = (basePrice + 400) * this.quantity
         } else {
             return null
         }
+
+        if (this.location !== '') {
+            totalPrice += deliveryFee
+        }
+
+        return totalPrice;
     }
 
     // Get form details
@@ -48,6 +55,10 @@ $(function () {
 
         const Order = new order(size, crust, topping, quantity, location)
         console.log(Order)
+
+        const orderPrice = Order.calculatePrice()
+        
+        console.log(orderPrice)
 
         $('#order-card').fadeIn()
 
