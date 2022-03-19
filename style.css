@@ -42,7 +42,7 @@
 }
 
 .order .container {
-    padding-top: 3%;
+    padding-top: 1%;
 }
 
 .order .container .form form {
@@ -73,6 +73,7 @@
     background-color: var(--green);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+    max-height: 20rem;
 }
 
 .order .container .card .yourOrder button {
@@ -104,6 +105,19 @@
     .hero .contents .pizza img {
         margin-top: 2rem;
         max-height: 20rem;
+    }
+
+    .order .container {
+        margin-top: 10%;
+        flex-direction: column;
+    }
+
+    .order .container .form {
+        margin: 2rem 0 !important;
+    }
+
+    .order .container .card {
+        margin-bottom: 4rem;
     }
 }
 
