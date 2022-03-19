@@ -18,12 +18,15 @@ $(function () {
         this.location = location
     }
 
+    // Baseprice and delivery fees
     const basePrice = 500;
     let totalPrice;
     const deliveryFee = 200;
 
+    // Method used to calculate price based on user input
     order.prototype.calculatePrice = function () {
 
+        // Determine price based on size
         if (this.size === 'small') {
             totalPrice = basePrice * this.quantity
         } else if (this.size === 'medium') {
@@ -34,6 +37,7 @@ $(function () {
             return null
         }
 
+        // Add delivery fee if delivery is required
         if (this.location !== '') {
             totalPrice += deliveryFee
         }
@@ -43,8 +47,10 @@ $(function () {
 
     // Get form details
     $('#form').on('submit', (e) => {
+        // Prevent browser refresh
         e.preventDefault()
 
+        // Get user input from form
         const size = $('#size').val()
         const crust = $('#crust').val()
         const topping = $('#topping').val()
@@ -52,15 +58,19 @@ $(function () {
         const location = $('#location').val()
 
         
-
+        // Create new Order object with properties from form
         const Order = new order(size, crust, topping, quantity, location)
 
+        // Call calculate price method
         const orderPrice = Order.calculatePrice()
         
-        $('#showPrice').text('Total: Ksh ' + orderPrice)
+        // Insert price into price card element
+        $('#showPrice').text('Total: ' + orderPrice.toLocaleString('en-US', {style: 'currency', currency: 'KSH'}))
 
+        // Reveal card to user with price inserted
         $('#order-card').fadeIn()
 
-        $(this).trigger('reset')
+        // reset form
+        $('#form').trigger('reset')
     })
 });
